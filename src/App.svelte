@@ -1,9 +1,14 @@
 <script>
+  import Header from "./components/Header.svelte";
 </script>
 
-<main>
-  <h1>Shonen Jump Clone</h1>
-</main>
-
 <style>
+
 </style>
+
+<main>
+  <!-- Header -->
+  <Header />
+  <!-- Navbar -->
+  <!-- Banner -->
+</main>
