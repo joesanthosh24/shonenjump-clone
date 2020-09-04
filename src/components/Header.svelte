@@ -24,15 +24,13 @@
     padding: 10px;
     font-size: 16px;
     color: #d8d8d8;
+    transition: color 2ms ease-in;
   }
   .item:hover {
     color: white;
   }
   #last_item {
     margin-right: auto;
-  }
-  a {
-    text-decoration: none;
   }
 </style>
 
