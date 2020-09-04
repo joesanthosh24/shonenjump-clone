@@ -14,7 +14,8 @@
   #header {
     display: flex;
     background-color: #2e2e2e;
-    font-family: "Circular", Avenir, sans-serif;
+    width: 100%;
+    overflow: hidden;
   }
   #first_item {
     margin-left: 10%;
