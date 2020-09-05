@@ -3,6 +3,11 @@
 </script>
 
 <style>
+  h3 {
+    font-weight: 700;
+    font-size: 56px;
+    color: #2E2E2E;
+  }
   .containerBgImg {
     background: url("https://de7i3bh7bgh0d.cloudfront.net/wsj-bg-smoketile.jpg");
     height: 800px;
@@ -35,6 +40,9 @@
     object-fit: contain;
     width: 100%;
   }
+  .chapterText {
+    margin-left: 25px;
+  }
 
   /* Media Queries */
   @media (min-width: 1367px) {
@@ -59,6 +67,9 @@
       <img src="https://dw9to29mmj727.cloudfront.net/SJ/sj-logo-wide.png" alt="Shonen Logo">
     </div>
     <!-- Latest Chapters Text -->
+    <div class="chapterText">
+      <h3>LATEST FREE CHAPTERS</h3>
+    </div>
     <!-- List of Manga -->
   </div>
 </div>

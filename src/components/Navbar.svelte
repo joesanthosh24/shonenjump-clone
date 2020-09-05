@@ -4,49 +4,57 @@
 </script>
 
 <style>
-  #navbar {
+   #navbar {
     display: flex;
     width: 100%;
     overflow: hidden;
+    transition: color 2ms ease-in;
   }
   .navbarLeft {
-    flex: 0.8;
     background-color: #F2F2F2;
+    padding-left: 20px;
+    flex: 0.8;
   }
   .navbarRight {
     background-color: red;
-    flex: 0.2;
     text-align: left;
+    flex: 0.2;
   }
   .navbarRight > img {
     object-fit: contain;
     height: 80px;
-    width: 80px;
+    width: 120px;
     margin: 5px auto;
-    margin-left: 20px;
+    margin-left: 90px;
   }
   .top {
     display: flex;
-    margin-left: 10%;
-    padding: 20px;
     justify-content: space-between;
-    align-items: center;
-  }
-  .topLinks {
-    padding-left: 15px;
+    margin-top: 15px;
   }
   .topLink {
-    margin-right: 15px;
+    padding: 10px;
     color: #2e2e2e;
     font-size: 20px;
-    transition: color 2ms ease-in;
   }
   .topLink:hover {
     color: #FF0000;
   }
-  .topInputContainer {
-    flex: 0.4;
-    display: flex;
+  .bottom {
+    margin-top: 20px;
+  }
+  .bottomLink {
+    padding: 25px 10px;
+    color: #2e2e2e;
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .bottomLink:hover {
+    color: #FF0000;
+  }
+  .active {
+    border-bottom: 3px solid #2e2e2e;
   }
   .inputContainer {
     display: flex;
@@ -54,6 +62,7 @@
     border: 1px solid #fff;
     padding: 7px;
     background-color: #fff;
+    margin-right: 50px;
   }
   input {
     border: none;
@@ -63,24 +72,22 @@
   input:focus {
     outline: none;
   }
-  .bottom {
-    text-transform: uppercase;
-    padding-left: 140px;
-    display: flex;
+
+  /* Media Queries */
+  @media (min-width: 1500px) {
+    .navbarLeft {
+      padding-left: 50px;
+    }
   }
-  .bottomLink {
-    margin-right: 15px;
-    color: #2e2e2e;
-    font-size: 26px;
-    font-weight: 700;
-    padding-bottom: 15px;
-    transition: color 2ms ease-in;
+  @media (min-width: 1700px) {
+    .navbarLeft {
+      padding-left: 100px;
+    }
   }
-  .bottomLink:hover {
-    color: #FF0000;
-  }
-  .active {
-    border-bottom: 3px solid #2e2e2e;
+  @media (min-width: 1900px) {
+    .navbarLeft {
+      padding-left: 300px;
+    }
   }
 </style>
 
@@ -88,7 +95,7 @@
   <div class="navbarLeft">
     <div class="top">
       <div class="topLinks">
-        <a href="#" class="topLink">Log In</a>
+        <a href="#" id="first-top-link" class="topLink">Log In</a>
         <a href="#" class="topLink">Sign Up</a>
         <a href="#" class="topLink">
           <Icon data={heart} />

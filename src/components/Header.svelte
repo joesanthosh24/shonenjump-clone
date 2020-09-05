@@ -18,7 +18,7 @@
     overflow: hidden;
   }
   #first_item {
-    margin-left: 10%;
+    margin-left: 20px;
     color: #949494;
   }
   .item {
@@ -32,6 +32,23 @@
   }
   #last_item {
     margin-right: auto;
+  }
+
+  /* Media Queries */
+  @media (min-width: 1500px) {
+    #first_item {
+      margin-left: 50px;
+    }
+  }
+  @media (min-width: 1700px) {
+    #first_item {
+      margin-left: 100px;
+    }
+  }
+  @media (min-width: 1900px) {
+    #first_item {
+      margin-left: 300px;
+    }
   }
 </style>
 
