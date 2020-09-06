@@ -1,12 +1,32 @@
 <script>
+  import Manga from "./Manga.svelte";
 
+  import { baseUrl } from "../api";
+
+  let mangas = [];
+
+  fetch(baseUrl)
+    .then(res => res.json())
+    .then(data => {
+      const mangaData = data.data;
+      
+      mangaData.map(manga => {
+        mangas = [...mangas, { id: manga.id, data: manga.attributes }];
+      });
+    });
+
+  console.log(mangas);
 </script>
 
 <style>
   h3 {
     font-weight: 700;
     font-size: 56px;
-    color: #2E2E2E;
+  }
+  h4 {
+    line-height: 1;
+    font-size: 35px;
+    font-weight: lighter;
   }
   .containerBgImg {
     background: url("https://de7i3bh7bgh0d.cloudfront.net/wsj-bg-smoketile.jpg");
@@ -29,7 +49,7 @@
   }
   #first-item {
     cursor: not-allowed;
-    color: #CCCCCC;
+    color: #cccccc;
     margin-left: 25px;
   }
   .logo {
@@ -42,6 +62,13 @@
   }
   .chapterText {
     margin-left: 25px;
+    color: #2e2e2e;
+  }
+  .mangas {
+    margin-left: 25px;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   /* Media Queries */
@@ -64,12 +91,23 @@
     </div>
     <!-- Shonen Jump Logo -->
     <div class="logo">
-      <img src="https://dw9to29mmj727.cloudfront.net/SJ/sj-logo-wide.png" alt="Shonen Logo">
+      <img
+        src="https://dw9to29mmj727.cloudfront.net/SJ/sj-logo-wide.png"
+        alt="Shonen Logo" />
     </div>
     <!-- Latest Chapters Text -->
     <div class="chapterText">
       <h3>LATEST FREE CHAPTERS</h3>
+      <h4>
+        Coming Sunday: New series <em>High School Family</em>! Imagine if your
+        whole family ended up being your classmates!
+      </h4>
     </div>
     <!-- List of Manga -->
+    <div class="mangas">
+    {#each mangas as {id, data: { titles, posterImage: { original, tiny, small, medium, large } }}}
+      <Manga id={id} titles={titles} imageUrl={original || tiny || small || medium || large} />
+    {/each}
+    </div>
   </div>
 </div>

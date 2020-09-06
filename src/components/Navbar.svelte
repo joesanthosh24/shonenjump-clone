@@ -19,13 +19,14 @@
     background-color: red;
     text-align: left;
     flex: 0.2;
+    height: 113px;
   }
   .navbarRight > img {
     object-fit: contain;
     height: 80px;
     width: 120px;
-    margin: 5px auto;
-    margin-left: 90px;
+    padding-left: 10%;
+    padding-top: 5%;
   }
   .top {
     display: flex;
@@ -44,7 +45,7 @@
     margin-top: 20px;
   }
   .bottomLink {
-    padding: 25px 10px;
+    padding: 10px 15px;
     color: #2e2e2e;
     font-size: 26px;
     font-weight: 700;
@@ -54,7 +55,7 @@
     color: #FF0000;
   }
   .active {
-    border-bottom: 3px solid #2e2e2e;
+    border-bottom: 5px solid #2e2e2e;
   }
   .inputContainer {
     display: flex;
