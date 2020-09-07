@@ -6,11 +6,11 @@
   let mangas = [];
 
   fetch(baseUrl)
-    .then(res => res.json())
-    .then(data => {
+    .then((res) => res.json())
+    .then((data) => {
       const mangaData = data.data;
-      
-      mangaData.map(manga => {
+
+      mangaData.map((manga) => {
         mangas = [...mangas, { id: manga.id, data: manga.attributes }];
       });
     });
@@ -105,9 +105,13 @@
     </div>
     <!-- List of Manga -->
     <div class="mangas">
-    {#each mangas as {id, data: { titles, posterImage: { original, tiny, small, medium, large } }}}
-      <Manga id={id} titles={titles} imageUrl={original || tiny || small || medium || large} />
-    {/each}
+      {#each mangas as { id, data: { titles, posterImage: { original, tiny, small, medium, large }, chapterCount } }}
+        <Manga
+          {id}
+          {titles}
+          imageUrl={original || tiny || small || medium || large}
+          chapters={chapterCount} />
+      {/each}
     </div>
   </div>
 </div>
